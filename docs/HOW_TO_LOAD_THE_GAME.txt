@@ -1,0 +1,262 @@
+HOW TO LOAD THE GAME
+
+This document only describes some non-obvious procedures on how to load the game
+on some emulators (similar procedures can be followed on the real machines):
+
+
+---------------------------------------------------------
+AMSTRAD CPC/GX4000
+
+You can use WinAPE
+
+- Tape (.cdt) version:
+You need to attach the image as a tape
+In BASIC type
+|tape
+run"
+Start PLAY on the virtual tape player
+
+- Disk (.dsk) version:
+You need to attach the image as a disk
+In BASIC type
+run"xchase
+
+- ROM (.cpr) version:
+You need to attch the image as a cartridge
+
+---------------------------------------------------------
+NES 
+
+Use mednafen and run the following command:
+mednafen.exe -fs  1 FULL_nes.nes
+
+---------------------------------------------------------
+
+PCE
+
+Use mednafen and run the following command:
+mednafen.exe -fs  1 TINY_pce.pce
+
+
+---------------------------------------------------------
+JUPITER ACE
+
+Use EightOne emulator.
+
+For the FULL version game 
+"0 0 bload full"
+Open the FULL .wav version.
+
+---------------------------------------------------------
+ATARI 5200
+
+Use Atari800 emulator with the Atari 5200 bios roms and select Atari 5200 emulation.
+Load as 16k one chip cartridge.
+
+---------------------------------------------------------
+CBM 610
+
+Use WinVice 3.1 and try multiple times.
+Sometimes load"*",8 helps.
+There must be a bug in WinVice disk drive emulation for this target.
+
+---------------------------------------------------------
+VG 5000
+
+Type CLOAD
+Select the game file
+
+---------------------------------------------------------
+AQUARIUS
+
+Unzip the .zip file.
+Type CLOAD 
+First load the file starting with underscore
+Type RUN
+Type CLOAD
+Then load the other file
+
+---------------------------------------------------------
+
+Memotech MTX
+
+Use the MESS emulator
+Rename FULL_MTX.mtx to FULL and place it in the same folder as the Mess emulator
+In Basic do:
+LOAD"FULL"
+RUN
+
+
+---------------------------------------------------------
+
+Sharp MZ
+
+Use mz800Emu
+Press C
+Select .mzf file
+
+---------------------------------------------------------
+
+Philips 2000
+
+Use m2000-allegro5 emulator
+Place the game file into the same directory as the m2000.exe and rename it into p2000.cas
+In BASIC execute:
+CLOAD
+RUN
+
+---------------------------------------------------------
+
+Luxor ABC 80 
+
+Use the ABC80SIM emulator 
+
+Pass the ihx file as a parameter to the emulator
+Run it directly with the command “A=CALL(49200)”
+
+---------------------------------------------------------
+
+Robotron Z 9001
+
+Use the JKCEMU emulator.
+Go to settings 
+Choose "Einstellungen"
+Select Z9001
+Press "Schliessen"
+Load file with "Laden"s
+
+---------------------------------------------------------
+
+CCE MC-1000
+
+Use the MESS emulator
+Use File Manager to attach the WAV file
+In BASIC do: TLOAD
+
+---------------------------------------------------------
+
+Galaksija
+
+Use the MESS emulator
+
+Use File Manager to attach the WAV file
+In BASIC run: OLD
+Start the tape
+In BASIC run: RUN
+
+
+---------------------------------------------------------
+
+Ohio Scientific C1P
+
+Start the WinOSI executable.
+Under "Options" select "System Configuration...".
+Select "OSI C1P / Superboard II (600 BOard)" as machine type.
+On the "System ROMs" tab under "Specify ROM Type" select SYN600.
+Press "OK"
+Under "File" select "Attach Serial Input File...".
+Select the file "FULL_osic1p.c1p".
+In the emulator window you should see the "D/C/W/M" prompt. 
+Press "M" to run the monitor. You then should see the "0000 00" prompt of the machine monitor.
+Press "l" (lowercase L). This will load the program and start it.
+
+
+Memory configs in WinOSI 
+Open Osi.ini
+32K -> RAMTOP=0x7FFF
+8k  _> RAMTOP=0x1FFF
+---------------------------------------------------------
+
+SC 3000
+
+Use the MESS emulator
+
+Run mess with 
+mess64.exe sc3000 -cart1 <basic31 file name>.sc -cass1 FULL_sc3000_32k.wav
+Inside the emulator type:
+LOAD
+RUN
+
+----------------------------------------------------------
+
+SHARP X1
+
+Use Takeda X1 emulator.
+1. Start the emulator.
+2. Click on FD0.
+3. Select the disk image
+
+----------------------------------------------------------
+
+EPSON PX-4 / HC-40
+
+Use Takeda emulator for HC-40 with the right SYS.ROM file (https://fjkraan.home.xs4all.nl/comp/px4/).
+
+Rename the binary into BASIC.ROM and replace the original BASIC.ROM that
+should be (or have been) in the same directory as the HC-40 emulator executable.
+
+----------------------------------------------------------
+
+EPSON PX-8 / HC-80
+
+Use Takeda emulator for HC-80 with the right SYS.ROM file.
+
+Rename the binary into BASIC.ROM and replace the original BASIC.ROM that
+should be (or have been) in the same directory as the HC-80 emulator executable.
+
+----------------------------------------------------------
+
+Robotron Z 1013
+
+Use J1013 emulator (http://www.jens-mueller.org/j1013/download.html):
+1. Press Datei->Laden
+2. Select binary
+3. Press Starten
+
+----------------------------------------------------------
+
+Robotron KC 85/2, 85/3, 85/4, 85/5, HC 900
+
+Use the JKCEMU emulator.
+Go to settings 
+Choose "Einstellungen"
+Select your target (e.g., KC 85/5)
+Press "Schliessen"
+Load file with "Laden"s
+
+----------------------------------------------------------
+
+Amstrad NC 100
+
+Use nc100em-1.2-2014 emulator 
+Rename the binary to nc100.card and place it in the same folder as the emulator
+Run the emulator. 
+Control-X to start the game
+
+----------------------------------------------------------
+
+TRS-80 Model 1/2/4
+
+Use trs80gp-1.8
+Type enter to get to the console
+Use load option
+
+----------------------------------------------------------
+
+Generic CP/M with ADM-3A control sequences
+
+Examples of CP/M systems with ADM-3A support:
+multiple Kaypro systems, Aussie Byte (Knight 2000), Decision Mate V
+
+Use MAME emulator with correct roms and CP/M disks
+Examples:
+mame64.exe kaypro2x -flop1 ..\disk\kaypro\k10hald1.td0 -uimodekey DEL
+mame64.exe dmv -flop1 ..\disk\dmv\dm5-cpm.td0 -uimodekey DEL
+mame64.exe aussieby -flop1 ..\disk\aussie_byte\knight2000_boot.dsk -uimodekey DEL
+
+WAIT for the operating system to full load.
+Use the quickload option to load the .COM file.
+
+If you want to create a disk image you need to follow the instructions in the Z88DK wiki.
+
+
